@@ -12,13 +12,21 @@
                 font-weight: 900;
                 font-size: 128px;
                 text-align: center;
-                text-shadow: 0 4px 8px #795548;
+                position: relative;
+                top: 4px;
+                text-shadow: 0 0 0 #795548;
+                transition: text-shadow 500ms, top 500ms;
                 line-height: 1em;
                 margin-bottom: 0;
                 animation-name: unblur;
-                animation-duration: 2s;
+                animation-duration: 2.5s;
                 animation-direction: forward;
                 animation-iteration-count: 1;
+            }
+
+            .title:hover {
+                top: 0;
+                text-shadow: 0 4px 8px #795548;
             }
 
             .subtitle {
