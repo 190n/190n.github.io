@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0;">
+    <head>
+        <meta charset="utf-8">
+        <title>rakūn - Trash Yourself</title>
+        <style>
+            * {
+                font-family: Roboto, "Franklin Gothic", sans-serif;
+            }
+
+            .title {
+                font-weight: 900;
+                font-size: 128px;
+                text-align: center;
+                text-shadow: 0 4px 8px #795548;
+                line-height: 1em;
+                margin-bottom: 0;
+                animation-name: unblur;
+                animation-duration: 2s;
+                animation-direction: forward;
+                animation-iteration-count: 1;
+            }
+
+            .subtitle {
+                text-align: center;
+                font-weight: 500;
+                letter-spacing: 0.5em;
+                filter: blur(1px);
+            }
+
+            @keyframes unblur {
+                from {
+                    filter: blur(64px);
+                    opacity: 0;
+                }
+
+                to {
+                    filter: blur(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+    <body bgcolor="#d7ccc8" style="padding: 0 64px 0 64px;">
+        <header>
+            <h1 class="title">rakūn</h1>
+            <h2 class="subtitle">trash yourself</h2>
+        </header>
+    </body>
+</html>
