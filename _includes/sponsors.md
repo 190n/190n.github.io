@@ -2,7 +2,9 @@
 ### Platinum
 
 {% for sp in site.data.sponsors.platinum %}
-[![{{ sp.name }}](/img/logos/{{ sp.logo }})]({{ sp.url}})
+<a href="{{ sp.url }}" target="_blank">
+    <img src="/img/logos/{{ sp.logo }}" class="logo logo-platinum" alt="{{ sp.name }}" title="{{ sp.name }}">
+</a>
 {% endfor %}
 
 {% endif %}
@@ -10,15 +12,18 @@
 ### Gold
 
 {% for sp in site.data.sponsors.gold %}
-[![{{ sp.name }}](/img/logos/{{ sp.logo }})]({{ sp.url}})
-{% endfor %}
+<a href="{{ sp.url }}" target="_blank">
+    <img src="/img/logos/{{ sp.logo }}" class="logo logo-gold" alt="{{ sp.name }}" title="{{ sp.name }}">
+</a>{% endfor %}
 
 {% endif %}
 {% if site.data.sponsors.silver.size > 0 %}
 ### Silver
 
 {% for sp in site.data.sponsors.silver %}
-[![{{ sp.name }}](/img/logos/{{ sp.logo }})]({{ sp.url}})
+<a href="{{ sp.url }}" target="_blank">
+    <img src="/img/logos/{{ sp.logo }}" class="logo logo-silver" alt="{{ sp.name }}" title="{{ sp.name }}">
+</a>
 {% endfor %}
 
 {% endif %}
@@ -26,7 +31,9 @@
 ### Bronze
 
 {% for sp in site.data.sponsors.bronze %}
-[![{{ sp.name }}](/img/logos/{{ sp.logo }})]({{ sp.url}})
+<a href="{{ sp.url }}" target="_blank">
+    <img src="/img/logos/{{ sp.logo }}" class="logo logo-silver" alt="{{ sp.name }}" title="{{ sp.name }}">
+</a>
 {% endfor %}
 
 {% endif %}

@@ -9,3 +9,20 @@ body {
     color: #eeeeee;
     font-family: Roboto;
 }
+
+.logo {
+    display: inline-block;
+    margin: 8px;
+}
+
+.logo-platinum {
+    height: 200px;
+}
+
+.logo-gold {
+    height: 120px;
+}
+
+.logo-silver, .logo-bronze {
+    height: 80px;
+}
