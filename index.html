@@ -1,15 +1,16 @@
 ---
 title: Home
+layout: default
 ---
 
-<h1>Hello, world!</h1>
+<h1>Hyphen-Hacks</h1>
 
-<h5>{{ page.title }}</h5>
+<section id="schedule">
+    <h2>Schedule</h2>
+    {% include mdify.html file='schedule.md' %}
+</section>
 
-<ul>
-    {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url }}">{{ post.title}}</a>
-    </li>
-    {% endfor %}
-</ul>
+<section id="sponsors">
+    <h2>Sponsors</h2>
+    {% include mdify.html file='sponsors.md' %}
+</section>

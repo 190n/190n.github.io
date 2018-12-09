@@ -4,12 +4,8 @@ html {
 
 body {
     max-width: 800px;
-    margin-left: -400px;
-    position: absolute;
-    left: 50%;
-}
-
-* {
-    font-family: Roboto, sans-serif;
-    color: white;
+    margin: auto;
+    padding: 0 16px 0 16px;
+    color: #eeeeee;
+    font-family: Roboto;
 }

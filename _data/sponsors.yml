@@ -1,0 +1,21 @@
+platinum:
+    -
+        name: Company 1
+        logo: company1.png
+        url: https://example.com
+gold:
+    -
+        name: Comapny 2
+        logo: company2.png
+        url: https://example.com
+    -
+        name: Company 4
+        logo: company2.png
+        url: https://example.com
+silver:
+
+bronze:
+    -
+        name: Company 3
+        logo: company3.png
+        url: https://example.com
