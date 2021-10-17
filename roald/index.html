@@ -6,7 +6,8 @@
 		<title>Roald</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"></noscript>
 		<style>
 			html, body {
 				width: 100%;
@@ -50,8 +51,6 @@
 
 			#wrapper {
 				margin-top: 100px;
-				width: 89px;
-				height: 128px;
 			}
 
 			#wrapper.animated {
@@ -92,7 +91,7 @@
 				<picture id="roald">
 					<source srcset="imgs/roald.webp 1x, imgs/roald@2x.webp 2x, imgs/roald@3x.webp 3x" type="image/webp">
 					<source srcset="imgs/roald.png 1x, imgs/roald@2x.png 2x, imgs/roald@3x.png 3x" type="image/png">
-					<img src="imgs/roald.png" alt="penguin in a sweater">
+					<img src="imgs/roald.png" width="89" height="128" alt="penguin in a sweater">
 				</picture>
 			</div>
 			<button id="backflip">Do a backflip!</button>
