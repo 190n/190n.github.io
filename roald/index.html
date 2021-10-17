@@ -12,6 +12,7 @@
 				width: 100%;
 				height: 100%;
 				margin: 0;
+				font-family: 'Fredoka One', sans-serif;
 			}
 
 			main {
@@ -28,12 +29,15 @@
 				background-color: transparent;
 				border: none;
 				font-size: 48px;
-				font-weight: bold;
-				font-family: 'Fredoka One', sans-serif;
+				font-family: inherit;
 				transition: 150ms transform;
 				cursor: pointer;
 				text-shadow: 0 0 32px #0000ff80;
 				margin-top: 32px;
+			}
+
+			#message {
+				font-size: 24px;
 			}
 
 			#backflip:active {
@@ -92,14 +96,34 @@
 				</picture>
 			</div>
 			<button id="backflip">Do a backflip!</button>
+			<p id="message">&nbsp;</p>
 		</main>
 		<script>
+			const messages = [
+				'wow!',
+				'he do be flipping tho',
+				'😎😎😎',
+				'look at him go',
+				'so swag',
+				'🥶🥶🥶',
+				'such drip',
+			];
+			let bag = [...messages];
+
 			document.getElementById('backflip').onclick = () => {
 				if (document.getElementById('roald').classList.contains('animated')) {
 					return;
 				}
 				document.getElementById('roald').classList.add('animated');
 				document.getElementById('wrapper').classList.add('animated');
+
+				const whichMessage = Math.floor(Math.random() * bag.length), message = bag[whichMessage];
+				bag.splice(whichMessage, 1);
+				if (bag.length == 0) {
+					bag = [...messages];
+				}
+
+				document.getElementById('message').textContent = message;
 				setTimeout(() => {
 					document.getElementById('roald').classList.remove('animated');
 					document.getElementById('wrapper').classList.remove('animated');
