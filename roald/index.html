@@ -15,6 +15,7 @@
 				height: 100%;
 				margin: 0;
 				font-family: 'Fredoka One', sans-serif;
+				font-size: 24px;
 			}
 
 			main {
@@ -36,10 +37,6 @@
 				cursor: pointer;
 				text-shadow: 0 0 32px #0000ff80;
 				margin-top: 32px;
-			}
-
-			#message {
-				font-size: 24px;
 			}
 
 			#backflip:active {
@@ -97,6 +94,9 @@
 			</div>
 			<button id="backflip">Do a backflip!</button>
 			<p id="message">&nbsp;</p>
+			<p style="visibility: hidden;">
+				Total backflips so far: <span id="counter"></span>
+			</p>
 		</main>
 		<script>
 			const messages = [
@@ -109,6 +109,22 @@
 				'such drip',
 			];
 			let bag = [...messages];
+
+			function setCounter(num) {
+				const counter = document.getElementById('counter');
+				counter.parentElement.style.visibility = 'visible';
+				const str = num.toString();
+				let commas = '';
+				for (let i = 0; i < str.length; i += 1) {
+					const char = str[str.length - 1 - i];
+					if (i % 3 == 0 && i != 0) {
+						commas = char + ',' + commas;
+					} else {
+						commas = char + commas;
+					}
+				}
+				counter.textContent = commas;
+			}
 
 			document.getElementById('backflip').onclick = () => {
 				if (document.getElementById('roald').classList.contains('animated')) {
@@ -128,7 +144,21 @@
 					document.getElementById('roald').classList.remove('animated');
 					document.getElementById('wrapper').classList.remove('animated');
 				}, 1000);
+
+				fetch('https://roald.190n.org/backflip', {
+					method: 'POST',
+					mode: 'cors',
+				}).then(res => {
+					if (!res.ok) {
+						res.text().then(t => alert(t));
+					}
+				}).catch(e => alert(e));
 			}
+
+			const sock = new WebSocket('wss://roald.190n.org/connect');
+			sock.onmessage = e => {
+				setCounter(parseInt(e.data));
+			};
 		</script>
 	</body>
 </html>
