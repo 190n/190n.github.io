@@ -152,8 +152,8 @@
 					bag = [...messages];
 				}
 
-				if (Math.random() < 0.005) {
-					message = 'JARVIS, take a screenshot of this and post to #off-topic.';
+				if (Math.random() < 0.005 && !message.startsWith('JARVIS')) {
+					message = 'JARVIS, take a screenshot of this and post it in #off-topic.';
 					bag = new Array(3).fill(message);
 				}
 
