@@ -145,10 +145,16 @@
 				document.getElementById('roald').classList.add('animated');
 				document.getElementById('wrapper').classList.add('animated');
 
-				const whichMessage = Math.floor(Math.random() * bag.length), message = bag[whichMessage];
+				const whichMessage = Math.floor(Math.random() * bag.length);
+				let message = bag[whichMessage];
 				bag.splice(whichMessage, 1);
 				if (bag.length == 0) {
 					bag = [...messages];
+				}
+
+				if (Math.random() < 0.005) {
+					message = 'JARVIS, take a screenshot of this and post to #off-topic.';
+					bag = new Array(3).fill(message);
 				}
 
 				document.getElementById('message').textContent = message;
